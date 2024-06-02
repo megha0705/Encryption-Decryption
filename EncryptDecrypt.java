@@ -30,10 +30,13 @@ class EncryptDecrypt{
                 int asciiValue = (int)decodedChar;
                 char decodedNum = (char)((asciiValue + 52 - key) % 10 + 48);
                 decoded.append(decodedNum);
-            }else{
-                char decodedString = (char)(((int)input.charAt(i) + 65 - key)% 26 + 65);
-                decoded.append(decodedString);
+            }else if(Character.isUpperCase(decodedChar)){
+                char  decodedUpperCase = (char)(((int)decodedChar + 65 - key)% 26 + 65);
+                decoded.append(decodedUpperCase);
 
+            }else if(Character.isLowerCase(decodedChar)){
+                char decodedLowerCase = (char)(((int)decodedChar - 97 + key)% 26 + 97);
+                decoded.append(decodedLowerCase);
             }
         }
         decoded.toString();
