@@ -35,7 +35,7 @@ class EncryptDecrypt{
                 decoded.append(decodedUpperCase);
 
             }else if(Character.isLowerCase(decodedChar)){
-                char decodedLowerCase = (char)(((int)decodedChar - 97 + key)% 26 + 97);
+                char decodedLowerCase = (char)(((int)decodedChar + 85 - key)% 26 + 97);
                 decoded.append(decodedLowerCase);
             }
         }
