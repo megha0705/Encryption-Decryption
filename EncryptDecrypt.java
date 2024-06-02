@@ -8,9 +8,9 @@ class EncryptDecrypt{
                 int asciiValue = (int)encodedChar;
                 char encodedNum = (char)((asciiValue - 48 + key) % 10 + 48);
                 encoded.append(encodedNum);
-             }else{
-                char encodedString = (char)(((int)encodedChar - 65 + key)% 26 + 65);
-                encoded.append(encodedString);
+             }else if(Character.isUpperCase(encodedChar)){
+                char encodedUpperCase = (char)(((int)encodedChar - 65 + key)% 26 + 65);
+                encoded.append(encodedUpperCase);
              }
         }
         encoded.toString();
