@@ -11,6 +11,9 @@ class EncryptDecrypt{
              }else if(Character.isUpperCase(encodedChar)){
                 char encodedUpperCase = (char)(((int)encodedChar - 65 + key)% 26 + 65);
                 encoded.append(encodedUpperCase);
+             }else if(Character.isLowerCase(encodedChar)){
+                char encodedLowerCase = (char)(((int)encodedChar - 97 + key)% 26 + 97);
+                encoded.append(encodedLowerCase);
              }
         }
         encoded.toString();
