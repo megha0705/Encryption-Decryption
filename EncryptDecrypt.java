@@ -6,7 +6,7 @@ class EncryptDecrypt{
         String encoded = "";
 
         for(int i = 0; i < input.length(); i++)
-            encoded += TABLE.charAt(TABLE.indexOf(input.charAt(i)) + key % TABLE.length());
+            encoded += TABLE.charAt(TABLE.indexOf(input.charAt(i)) + key % TABLE.length() );
             
         System.out.print(encoded);
         return encoded;
@@ -27,17 +27,18 @@ class EncryptDecrypt{
       
         Scanner sc = new Scanner(System.in);
         System.out.println("do u want to decrypt or encrypt string?");
-        String choice = sc.next();
+        String choice = sc.nextLine();
+        String input;
         if(choice.equalsIgnoreCase("encrypt")){
             System.out.print("provide input");
-            String input = sc.nextLine();
+            input = sc.nextLine();
             System.out.print("provide key");
             int key = sc.nextInt();
             encrypted(input , key);
         }
         else if(choice.equalsIgnoreCase("decrypt")){
             System.out.print("provide input");
-            String input = sc.nextLine();
+            input = sc.nextLine();
             System.out.print("provide key");
             int key = sc.nextInt();
             decrypted(input , key);
