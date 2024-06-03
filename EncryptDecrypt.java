@@ -24,16 +24,21 @@ class EncryptDecrypt{
     }
 
     public static void main(String [] args) {
-        int key = 3;
         Scanner sc = new Scanner(System.in);
         System.out.println("do u want to decrypt or encrypt string?");
-        String choice = sc.next();
+        String choice = sc.nextLine();
         if(choice.equalsIgnoreCase("encrypt")){
-            String input = sc.nextLine();
+            System.out.print("provide input");
+            String input = sc.next();
+            System.out.print("provide key");
+            int key = sc.nextInt();
             encrypted(input , key);
         }
         else if(choice.equalsIgnoreCase("decrypt")){
-            String input = sc.nextLine();
+            System.out.print("provide input");
+            String input = sc.next();
+            System.out.print("provide key");
+            int key = sc.nextInt();
             decrypted(input , key);
         }
         else{
