@@ -23,7 +23,8 @@ class EncryptDecrypt{
         return decoded;
     }
 
-    public static void main(String [] args) {
+    public static void main(String [] args){
+      
         Scanner sc = new Scanner(System.in);
         System.out.println("do u want to decrypt or encrypt string?");
         String choice = sc.nextLine();
