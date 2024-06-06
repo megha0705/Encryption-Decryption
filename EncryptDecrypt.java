@@ -1,12 +1,17 @@
 import java.util.Scanner;
 class EncryptDecrypt{
-    static final String TABLE = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()-=_+[]{}\\|;:\'\",.<>/?";
+        static final String TABLE = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()-=_+[]{}\\|;:\'\",.<>/?    ";
 
     public static String encrypted(String input , int key) {
         String encoded = "";
 
         for(int i = 0; i < input.length(); i++)
-            encoded += TABLE.charAt(TABLE.indexOf(input.charAt(i)) + key % TABLE.length() );
+        if(input.charAt(i) == ' '){
+            encoded += ' ';
+        }else{
+
+            encoded += TABLE.charAt(TABLE.indexOf(input.charAt(i))  + key % TABLE.length()  );
+        }
             
         System.out.print(encoded);
         return encoded;
@@ -15,9 +20,15 @@ class EncryptDecrypt{
 
     public static String decrypted(String input , int key) {
         String decoded = "";
+        
 
         for(int i = 0; i < input.length(); i++)
-            decoded += TABLE.charAt(TABLE.indexOf(input.charAt(i)) - key % TABLE.length());
+        if(input.charAt(i) == ' '){
+            decoded += ' ';
+        }else{
+            decoded += TABLE.charAt(TABLE.indexOf(input.charAt(i)) - key  % TABLE.length());
+        }
+          
             
         System.out.print(decoded);
         return decoded;
